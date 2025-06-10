@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Business</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Overlay para quando o menu lateral está aberto -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Menu Lateral (Side Menu) -->
+    <aside id="sideMenu" class="side-menu">
+        <div class="side-menu-header">
+            <span id="sideMenuNickname" class="side-menu-nickname"></span>
+            <button id="closeMenuBtn" class="close-menu">&times;</button>
+        </div>
+
+        <div id="sideMenuAuth" class="side-menu-auth">
+            <!-- Conteúdo de Login/Registro para Mobile/Side Menu -->
+            <input type="email" id="sideAuthEmail" placeholder="Email" required>
+            <input type="password" id="sideAuthPassword" placeholder="Senha" required>
+            <button id="sideLoginBtn">Entrar</button>
+            <button id="sideRegisterBtn">Registrar</button>
+            <button id="sideGoogleLoginBtn"><i class="fab fa-google"></i> Google</button>
+            <button id="sideLogoutBtn" class="side-logout-btn" style="display:none;">Sair da Conta</button> <!-- NOVO BOTÃO DE SAIR AQUI -->
+            <p id="sideAuthMessage" class="error-message"></p>
+        </div>
+
+        <ul class="side-menu-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#featured-products-section">Produtos</a></li>
+            <li id="sideAdminLink" style="display:none;"><a href="admin.html">Admin</a></li>
+            <li><a href="contact.html">contact</a></li>
+            <!-- Links adicionais do menu lateral, se houver -->
+        </ul>
+    </aside>
+
+    <!-- Cabeçalho Principal -->
+    <header class="main-header">
+        <i id="menuIcon" class="fas fa-bars menu-icon"></i>
+        <div class="profile-info">
+            <img src="https://via.placeholder.com/45/343a40/ffffff?text=U" alt="Profile" class="profile-img">
+            <span class="nickname" id="headerNickname">Usuário App</span>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar produtos..." id="searchInput">
+            <button id="searchButton">Buscar</button>
+        </div>
+        <!-- Botão de Login/Logout para Desktop, que abre o menu lateral para autenticação ou faz logout -->
+        <div class="auth-controls desktop-only">
+            <button id="mainHeaderAuthBtn" class="login-logout-btn">Login</button>
+            <a href="admin.html" id="desktopAdminLink" class="admin-link" style="display:none;">Admin</a>
+        </div>
+    </header>
+
+    <!-- Área de Conteúdo Principal -->
+    <main id="content-area">
+        <h1>Bem-vindo(a) ao App Business!</h1>
+        <p>Este é o conteúdo principal que será preenchido pelas outras páginas.</p>
+
+        <section id="featured-products-section">
+            <h2>Produtos em Destaque <button id="refreshProductsBtn" class="refresh-btn"><i class="fas fa-sync-alt"></i></button></h2>
+            <div id="productsGrid" class="featured-products">
+                <!-- Produtos serão carregados aqui pelo JavaScript -->
+                <p>Carregando produtos...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé Principal -->
+    <footer class="main-footer">
+        <p>&copy; 2024 App Business. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Prompt para Definir Nome de Exibição (Nickname) -->
+    <div id="displayNamePrompt" style="display:none;">
+        <h3>Bem-vindo!</h3>
+        <p>Por favor, defina um nome de exibição (nickname):</p>
+        <input type="text" id="nicknameInput" placeholder="Seu Nickname">
+        <button id="saveNicknameBtn">Salvar Nickname</button>
+        <p id="namePromptError" class="error-message" style="color:red;"></p>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+

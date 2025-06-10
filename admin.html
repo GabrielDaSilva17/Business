@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Business - Painel Admin</title>
+    <link rel="stylesheet" href="style.css"> <!-- Estilos gerais -->
+    <link rel="stylesheet" href="admin.css"> <!-- Estilos específicos do admin -->
+</head>
+<body class="admin-page">
+    <header>
+        <div class="container">
+            <h1>Painel Administrativo</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Voltar para o Início</a></li>
+                    <!-- Futuramente, talvez um link de logout de admin aqui -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <h2>Gerenciamento de Produtos</h2>
+
+        <section class="product-form">
+            <h3>Adicionar/Editar Produto</h3>
+            <form id="productForm">
+                <input type="hidden" id="productIdHidden"> <!-- Campo oculto para o ID do produto em edição -->
+
+                <div class="form-group">
+                    <label for="productName">Nome do Produto:</label>
+                    <input type="text" id="productName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription">Descrição:</label>
+                    <textarea id="productDescription" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice">Preço (R$):</label>
+                    <input type="number" id="productPrice" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productImageUrl">URL da Imagem:</label>
+                    <input type="url" id="productImageUrl" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="saveProductBtn">Adicionar Produto</button>
+                    <button type="button" class="btn btn-secondary" id="cancelEditBtn">Cancelar Edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="products-list-container">
+            <h3>Produtos Cadastrados</h3>
+            <div id="productsContainer">
+                <!-- Produtos serão carregados aqui pelo JavaScript -->
+                <p>Carregando produtos...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Business Admin. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+/* style.css - Estilos globais para o App Business */
+
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    transition: transform 0.5s ease; /* Transição para o body ao abrir o menu */
+}
+
+/* Estilos para o cabeçalho principal (Header) */
+.main-header {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribui o espaço */
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.5s ease; /* Transição para o header ao abrir o menu */
+}
+
+/* Ícone de Menu (Hambúrguer) - Escondido por padrão no desktop */
+.menu-icon {
+    display: none; /* Esconde no desktop */
+    font-size: 2.2em; /* Tamanho maior para mobile */
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+}
+
+.main-header .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o nickname */
+}
+
+.main-header .profile-img { /* Certifique-se que esta classe existe ou remova */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 3px solid #6c757d;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.main-header .nickname {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #e9ecef; /* Garante visibilidade */
+}
+
+.main-header .search-bar {
+    display: flex;
+    flex-grow: 0; /* IMPEDIR que a barra cresça infinitamente */
+    margin: 0 auto; /* Centraliza a barra no cabeçalho */
+    max-width: 400px; /* Largura MÁXIMA fixa para a barra de pesquisa no desktop */
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header .search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.main-header .search-bar input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.main-header .search-bar button {
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Evita que o botão encolha */
+}
+
+.main-header .search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* Auth Controls para Desktop */
+.main-header .auth-controls.desktop-only {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-header .auth-controls .login-logout-btn {
+    padding: 10px 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.main-header .auth-controls .login-logout-btn:hover {
+    background-color: #218838;
+}
+
+.main-header .auth-controls .admin-link {
+    color: #add8e6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.main-header .auth-controls .admin-link:hover {
+    color: #e9ecef;
+    text-decoration: underline;
+}
+
+/* Estilos para a área de conteúdo principal */
+#content-area {
+    padding: 30px;
+    max-width: 1300px;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    min-height: 700px;
+    text-align: center;
+    transition: transform 0.5s ease; /* Transição para o content-area ao abrir o menu */
+}
+
+/* Estilos para o rodapé principal */
+.main-footer {
+    background-color: #343a40;
+    color: #e9ecef;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.15);
+    font-size: 0.9em;
+    transition: transform 0.5s ease; /* Transição para o footer ao abrir o menu */
+}
+
+/* Estilos para itens de produto */
+.featured-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.product-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 280px;
+    max-width: 300px;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-item h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #343a40;
+}
+
+.product-item p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.product-item .price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.product-item button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #218838;
+}
+
+
+/* --- Estilos do Menu Lateral (Side Menu) --- */
+.side-menu {
+    height: 100%;
+    width: 0; /* Largura inicial zero para esconder */
+    position: fixed;
+    z-index: 2000; /* Acima de todo o conteúdo */
+    top: 0;
+    left: 0;
+    background-color: #343a40; /* Cor de fundo do menu */
+    overflow-x: hidden; /* Esconde conteúdo que transborda */
+    transition: 0.5s; /* Transição suave para deslizar */
+    padding-top: 60px; /* Espaço para o botão de fechar */
+    color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5); /* Sombra para destacar */
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu.open {
+    width: 250px; /* Largura quando aberto */
+}
+
+.side-menu-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #282c30; /* Fundo do cabeçalho do menu */
+    box-sizing: border-box; /* Garante que padding não aumente a largura */
+}
+
+.side-menu-nickname {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #e9ecef;
+}
+
+.side-menu .close-menu {
+    background: none;
+    border: none;
+    font-size: 3em; /* Aumentar o tamanho do 'X' para melhor visibilidade */
+    color: #e9ecef; /* Cor mais clara para melhor contraste */
+    cursor: pointer;
+    padding: 5px 10px;
+    line-height: 1;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Pequena sombra para destacar */
+}
+
+.side-menu-auth {
+    padding: 20px;
+    border-bottom: 1px solid #495057; /* Separador */
+    margin-bottom: 20px;
+}
+
+.side-menu-auth input {
+    width: calc(100% - 20px); /* Ocupa largura total menos padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #6c757d;
+    border-radius: 4px;
+    background-color: #495057; /* Fundo do input */
+    color: white;
+}
+
+.side-menu-auth input::placeholder {
+    color: #ced4da;
+}
+
+.side-menu-auth button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.side-menu-auth button:hover {
+    background-color: #218838;
+}
+
+/* Estilo para o NOVO botão de Sair da Conta no menu lateral */
+.side-logout-btn {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+    font-weight: bold;
+    /* Usar as mesmas propriedades dos botões de login/registro para consistência */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 10px; /* Mantém o espaçamento se houver outros elementos abaixo */
+    transition: background-color 0.3s ease;
+}
+
+.side-logout-btn:hover {
+    background-color: #c82333; /* Tom mais escuro de vermelho ao hover */
+}
+
+
+.side-menu-links {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.side-menu-links li a {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: #e9ecef;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.side-menu-links li a:hover {
+    color: #007bff;
+}
+
+/* Overlay para quando o menu lateral está aberto */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro e semi-transparente */
+    z-index: 1500; /* Entre o conteúdo e o menu */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Escondido para cliques */
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* Transição de opacidade */
+}
+
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease; /* Apenas opacidade na entrada */
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 992px) {
+    /* Esconde os controles de autenticação do cabeçalho original */
+    .main-header .auth-controls.desktop-only {
+        display: none;
+    }
+
+    /* Mostra o ícone de menu (hambúrguer) */
+    .menu-icon {
+        display: block;
+        order: 1; /* Garante que o ícone esteja na primeira posição */
+        margin-right: 15px; /* Espaçamento à direita do ícone */
+    }
+
+    /* Ajusta o layout do cabeçalho em telas menores */
+    .main-header {
+        justify-content: flex-start; /* Alinha os itens à esquerda */
+        gap: 10px; /* Espaçamento reduzido */
+        flex-wrap: nowrap; /* Impede quebras de linha inesperadas no header */
+    }
+
+    .main-header .profile-info {
+        order: 2; /* Perfil após o ícone de menu */
+        flex-grow: 0; /* Não cresce */
+    }
+
+    .main-header .search-bar {
+        order: 3; /* Barra de pesquisa depois do perfil */
+        flex-grow: 1; /* Ocupa o espaço restante */
+        margin: 0 auto; /* Centraliza a barra de pesquisa */
+        max-width: 300px; /* Largura MÁXIMA fixa para mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .search-bar {
+        max-width: 250px; /* Ajuste para telas menores ainda */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header .search-bar {
+        max-width: 100%; /* Ocupa largura total disponível */
+        margin: 0; /* Remove margem para ocupar todo o espaço */
+    }
+    .main-header .search-bar input[type="text"] {
+        padding: 8px 12px; /* Ajusta padding */
+        font-size: 0.9em;
+    }
+    .main-header .search-bar button {
+        padding: 8px 12px; /* Ajusta padding */
+        font-size: 0.9em;
+    }
+    .main-header .menu-icon {
+        margin-right: 10px;
+    }
+}
+
+/* Quando o menu lateral está aberto, desloca o conteúdo principal */
+body.menu-open {
+    overflow: hidden; /* Impede rolagem do corpo */
+}
+
+body.menu-open .main-header,
+body.menu-open #content-area,
+body.menu-open .main-footer {
+    transform: translateX(250px); /* Desloca o conteúdo para a direita */
+}
+
+body.menu-open .side-menu {
+    transform: translateX(0); /* Garante que o menu esteja na posição */
+}
+/* style.css - Estilos adicionais para o prompt de nome */
+
+#displayNamePrompt {
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra mais suave */
+    max-width: 400px;
+    margin: 50px auto; /* Centraliza na página */
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+#displayNamePrompt h3 {
+    color: #343a40;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+#displayNamePrompt p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#displayNamePrompt input {
+    width: calc(100% - 24px); /* Ocupa quase toda a largura com padding */
+    padding: 12px;
+    margin-bottom: 15px; /* Mais espaço entre inputs */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* Inclui padding na largura */
+}
+
+#displayNamePrompt input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+#displayNamePrompt button {
+    padding: 12px 25px;
+    background-color: #28a745; /* Botão verde */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ocupa a largura total */
+    box-sizing: border-box;
+}
+
+#displayNamePrompt button:hover {
+    background-color: #218838;
+}
+
+#namePromptError {
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+

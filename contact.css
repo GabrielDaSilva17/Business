@@ -1,0 +1,156 @@
+/* Estilos para a seção de contato */
+#contact-form-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o título e o formulário */
+}
+
+#contact-form-section h2 {
+    color: #333333;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+/* Estilos para o formulário */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os grupos de formulário */
+    text-align: left; /* Alinha o texto dentro dos grupos à esquerda */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block; /* Cada label em sua própria linha */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555555;
+    font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%; /* Ocupa a largura total do container */
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+    transition: border-color 0.3s ease; /* Transição suave na borda */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Sutil sombra ao focar */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    min-height: 120px; /* Altura mínima para a caixa de texto */
+}
+
+/* Estilos para o botão de envio */
+#contact-form button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ajusta a largura ao conteúdo */
+    align-self: center; /* Centraliza o botão no flex container */
+    margin-top: 20px;
+}
+
+#contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
+}
+
+#contact-form button[type="submit"]:active {
+    transform: translateY(0); /* Remove o efeito ao clicar */
+}
+
+/* Estilos para mensagens de feedback (sucesso/erro) */
+#form-messages {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: none; /* Inicialmente oculto, será mostrado via JS */
+}
+
+#form-messages.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#form-messages.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    #contact-form-section {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    #contact-form-section h2 {
+        font-size: 1.8em;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 10px;
+    }
+
+    #contact-form button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact-form-section {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    #contact-form-section h2 {
+        font-size: 1.5em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        font-size: 0.9em;
+    }
+
+    #contact-form button[type="submit"] {
+        font-size: 0.9em;
+    }
+}
+

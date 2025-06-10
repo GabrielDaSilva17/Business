@@ -1,0 +1,253 @@
+/* admin.css */
+
+/* Estilos gerais para o corpo do admin */
+body.admin-page {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #343a40;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+/* Formulário de Produto */
+.product-form {
+    background-color: #e9ecef;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #495057;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #495057;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+    transform: translateY(-2px);
+}
+
+#cancelEditBtn {
+    display: none; /* Escondido por padrão */
+}
+
+/* Lista de Produtos */
+.products-list-container {
+    margin-top: 40px;
+}
+
+.products-list-container h3 {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#productsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-list-item {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease;
+}
+
+.product-list-item:hover {
+    background-color: #e2e6ea;
+}
+
+.product-list-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+    flex-grow: 1;
+}
+
+.product-info h4 {
+    margin: 0 0 5px 0;
+    color: #343a40;
+    font-size: 1.1rem;
+}
+
+.product-info p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.product-actions .edit-btn,
+.product-actions .delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.product-actions .edit-btn {
+    background-color: #ffc107; /* Amarelo para Editar */
+    color: #343a40;
+}
+
+.product-actions .edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.product-actions .delete-btn {
+    background-color: #dc3545; /* Vermelho para Deletar */
+    color: white;
+}
+
+.product-actions .delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .product-form {
+        padding: 20px;
+    }
+
+    .product-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .product-list-item img {
+        margin: 0 auto 10px auto;
+    }
+
+    .product-info {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .product-actions {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .product-actions .btn {
+        width: 48%; /* Ocupa quase metade da largura */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .product-actions .btn {
+        width: 100%;
+    }
+}
+
